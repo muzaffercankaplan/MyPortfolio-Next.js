@@ -1,7 +1,6 @@
 {
   "extends": "next/core-web-vitals",
-  "rules" : {
-    "no-console" : "error",
-    "semi": ["error", "always"]
+  "rules": {
+    "no-console": "error"
   }
 }
