@@ -1,20 +1,62 @@
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import profilePic from "../../public/Avatar.jpg";
+
 const About = () => {
   return (
-    <div className="text-2xl tracking-widest">
-      <p className="mb-2">
-        Hello! My name is
-        <span className="text-text uppercase"> Muzaffer C. Kaplan</span> and I
-        am a frontend developer. As a frontend developer, I am responsible for
-        creating and maintaining the user interface of a website or application.
-      </p>
-      <p>
-        In my role as a frontend developer, I strive to create visually
-        appealing and intuitive user interfaces that provide a great experience
-        for users. I am constantly learning and staying up to date with the
-        latest technologies and best practices in the field, and I am always
-        looking for new challenges and opportunities to grow as a developer.
-      </p>
-    </div>
+    <header className="md:-mt-10 ml-24 lg:ml-0">
+      <p className="block md:hidden text-2xl mb-4">About</p>
+      <motion.div
+        className="box"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 3,
+        }}
+      >
+        <Image
+          className="AboutImage"
+          src={profilePic}
+          alt="profile"
+          width="400"
+          height="400"
+        />
+      </motion.div>
+      <div className="text-start tracking-wider ml-4 leading-8 ">
+        <p className="mb-1">
+          As a frontend developer, I am responsible for building and shaping the
+          user experience of websites and web applications. I do this by using a
+          combination of HTML, CSS, and JavaScript to create the visual and
+          interactive elements of these applications.
+        </p>
+
+        <p className="mb-1">
+          One of my key strengths is my ability to translate design mockups into
+          code. I have a strong understanding of how to structure and style HTML
+          elements, as well as how to add interactivity with JavaScript. I also
+          have experience making my code responsive, so that it looks and works
+          well on a variety of devices.
+        </p>
+
+        <p className="mb-1">
+          I am always looking to stay up-to-date with the latest technologies
+          and best practices in the field of frontend development. In my free
+          time, I enjoy learning about new frameworks and libraries, such as
+          Next.js, Tailwindcss, Typescript.
+        </p>
+
+        <p>
+          Thank you for taking the time to read my introduction. If you have any
+          questions or would like to discuss my experience further, please don't
+          hesitate to reach out.
+          <Link href="/contacts" className="Button from-left ml-4 px-4 py-1">
+            Contact
+          </Link>
+        </p>
+      </div>
+    </header>
   );
 };
 

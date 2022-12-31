@@ -9,10 +9,10 @@ const Skills = () => {
         {skillsIcon.map((item: skillsIconModal) => (
           <div
             key={item.title}
-            className="group flex items-center justify-center w-24 h-24 lg:w-32 lg:h-32 rounded-full border border-border cursor-pointer"
+            className="group flex items-center justify-center w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full border border-border cursor-pointer"
           >
             {<item.icon size={60} color={item.color} />}
-            <div className="text-xl absolute hidden group-hover:flex w-24 h-24 lg:w-32 lg:h-32  flex-col justify-center items-center rounded-full bg-thirty">
+            <div className="text-xl absolute hidden group-hover:flex w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32  flex-col justify-center items-center rounded-full bg-thirty">
               <p>{item.percent}%</p>
               <p>{item.title}</p>
             </div>
