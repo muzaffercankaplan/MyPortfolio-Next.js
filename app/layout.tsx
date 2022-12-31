@@ -14,7 +14,7 @@ export default function RootLayout({
       <body>
         <Header />
         <SideBar />
-        <div className="max-w-[1200px] mx-auto h-[90vh] pt-40 text-center flex flex-col justify-between">
+        <div className="max-w-[1200px] mx-auto h-[90vh] pt-4 md:pt-40 text-center flex flex-col justify-between">
           <main>{children}</main>
           <Footer />
         </div>

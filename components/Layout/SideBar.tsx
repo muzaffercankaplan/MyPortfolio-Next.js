@@ -13,19 +13,19 @@ const SideBar = () => {
     {
       icon: <BsGithub size={32} />,
       link: "https://github.com/muzaffercankaplan",
-      color: "#333",
+      color: "bg-[#333]",
       text: "Github",
     },
     {
       icon: <BsLinkedin size={32} />,
       link: "https://www.linkedin.com/in/muzafferckaplan/",
-      color: "#0e76a8",
+      color: "bg-[#0e76a8]",
       text: "LinkedIn",
     },
     {
       icon: <BsInstagram size={32} />,
       link: "https://github.com/muzaffercankaplan",
-      color: "#cd486b",
+      color: "bg-[#cd486b]",
       text: "Instagram",
     },
   ];
