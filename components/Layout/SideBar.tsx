@@ -30,7 +30,7 @@ const SideBar = () => {
     },
   ];
   return (
-    <div className="absolute top-1/3 flex flex-col gap-5">
+    <div className="absolute top-1/3 flex flex-col gap-5 z-50">
       {socialLink.map((item: socialLinkModal) => (
         <div key={item.text}>
           <SocialLinks item={item} />

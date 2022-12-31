@@ -42,7 +42,7 @@ const Header = () => {
   ];
 
   return (
-    <div className=" shadow-2xl flex justify-between px-10 py-5 items-center">
+    <div className="shadow-2xl flex justify-between px-10 py-5 items-center">
       <motion.div
         initial={{ x: -500, opacity: 1, scale: 1 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -83,7 +83,7 @@ const Header = () => {
           duration: 1.3,
           type: "spring",
         }}
-        className="block md:hidden"
+        className="block md:hidden z-50"
       >
         <motion.nav
           initial={false}

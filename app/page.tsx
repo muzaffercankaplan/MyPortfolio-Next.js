@@ -6,13 +6,14 @@ import Typewriter from "typewriter-effect";
 import profilePic from "../public/Avatar.jpg";
 const Page = () => {
   return (
-    <div className="text-3xl  md:-mt-10">
+    <div className="text-3xl md:-mt-10">
       <p className="block md:hidden text-2xl mb-4">Home</p>
       <motion.div
-        className="box "
-        initial={{ opacity: 0 }}
+        className="box z-0"
+        initial={{ opacity: 0, zIndex: 1 }}
         animate={{
           opacity: 1,
+          zIndex: 1,
         }}
         transition={{
           duration: 1.5,

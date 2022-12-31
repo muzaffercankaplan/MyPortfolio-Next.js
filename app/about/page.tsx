@@ -17,14 +17,12 @@ const About = () => {
         }}
       >
         <Image
-          className="AboutImage"
+          className="AboutImage w-48 h-48 mb-4 mx-auto float-none rounded-xl md:w-96 md:h-96 md:float-left md:rounded-full md:mr-[70px]"
           src={profilePic}
           alt="profile"
-          width="400"
-          height="400"
         />
       </motion.div>
-      <div className="text-start tracking-wider ml-4 leading-8 ">
+      <div className="text-start tracking-wider ml-4 sm:mr-4 text-sm leading-6 md:text-lg md:leading-8 ">
         <p className="mb-1">
           As a frontend developer, I am responsible for building and shaping the
           user experience of websites and web applications. I do this by using a

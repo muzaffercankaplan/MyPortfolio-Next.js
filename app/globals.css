@@ -117,10 +117,6 @@ body {
 
 .AboutImage {
   shape-outside: circle();
-  float: left;
-  border-radius:50%;
-  object-fit: cover;
-  margin-right: 70px;
 }
 
 .Button {		
