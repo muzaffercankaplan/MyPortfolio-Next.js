@@ -9,3 +9,20 @@ export interface navbarLinkModal {
   title: string;
   href: string;
 }
+
+export interface projectModal {
+  id: number;
+  title: string;
+  description: string;
+  demoUrl?: string;
+  githubUrl: string;
+  dependicies: string[];
+  image: string;
+}
+
+export interface sideBarIconModal {
+  icon: any;
+  link: string;
+  color: string;
+  text: string;
+}
