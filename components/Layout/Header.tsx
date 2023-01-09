@@ -63,7 +63,7 @@ const Header = () => {
         }}
         className="hidden md:flex gap-6"
       >
-        {navbarLink.map((item: navbarLinkModal) => (
+        {navbarLink.map((item) => (
           <div
             className={`relative text-lg ${
               pathName === item.href
@@ -133,7 +133,7 @@ const Header = () => {
             }}
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
           >
-            {navbarLink.map((item: navbarLinkModal) => (
+            {navbarLink.map((item) => (
               <div
                 className={`relative text-lg ${
                   pathName === item.href
