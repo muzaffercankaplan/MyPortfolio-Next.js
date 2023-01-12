@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useMemo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
 import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { projectsModal } from "../../../data/projectsModal";
 import { projectModal } from "../../../typings";
 
 const Projects = () => {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const page = searchParams.get("id");
   const currentProject = useMemo<projectModal | undefined>(() => {
@@ -16,6 +17,11 @@ const Projects = () => {
       ? projectsModal.find((item) => item.id === Number(page))
       : undefined;
   }, [page]);
+
+  useEffect(() => {
+    !currentProject ? router.push("error") : "";
+  }, []);
+
   return (
     <>
       <div key={currentProject?.id} className="relative">
@@ -63,13 +69,15 @@ const Projects = () => {
           <p className=" leading-7 "> {currentProject?.description} </p>
         </div>
         <div className="space-x-5 mb-10">
-          <Link
-            target="_blank"
-            href={currentProject?.demoUrl || ""}
-            className="border-border border p-2 tracking-widest font-serif rounded-md hover:bg-border"
-          >
-            Demo
-          </Link>
+          {currentProject?.framework === "React" && (
+            <Link
+              target="_blank"
+              href={currentProject?.demoUrl || ""}
+              className="border-border border p-2 tracking-widest font-serif rounded-md hover:bg-border"
+            >
+              Demo
+            </Link>
+          )}
           <Link
             target="_blank"
             href={currentProject?.githubUrl || ""}

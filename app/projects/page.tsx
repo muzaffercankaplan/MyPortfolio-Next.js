@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { projectsModal } from "../../data/projectsModal";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <p className="block md:hidden text-2xl mb-4">Projects</p>
@@ -39,4 +40,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
