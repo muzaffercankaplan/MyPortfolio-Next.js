@@ -1,3 +1,5 @@
+"use client";
+import { usePathname } from "next/navigation";
 import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
 import SideBar from "../components/Layout/SideBar";
@@ -8,13 +10,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathName = usePathname();
+  const pageControl = pathName?.split("/")[2];
+
   return (
     <html lang="en">
       <head />
       <body>
-        <Header />
-        <SideBar />
-        <div className="max-w-[1200px] mx-auto h-[90vh] pt-4 md:pt-40 text-center flex flex-col justify-between">
+        {!pageControl && <Header />}
+        {!pageControl && <SideBar />}
+        <div
+          className={`${
+            pageControl ? "h-screen" : "max-w-[1200px] pt-4 md:pt-40 h-[90vh]"
+          }   mx-auto text-center flex flex-col justify-between`}
+        >
           <main>{children}</main>
           <Footer />
         </div>

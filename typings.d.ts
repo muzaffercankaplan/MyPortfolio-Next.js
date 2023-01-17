@@ -18,6 +18,7 @@ export interface projectModal {
   githubUrl: string;
   dependicies: string[];
   image: string;
+  framework: string;
 }
 
 export interface sideBarIconModal {
