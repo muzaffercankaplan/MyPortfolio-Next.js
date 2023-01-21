@@ -46,9 +46,9 @@ const About = () => {
         </p>
 
         <p>
-          Thank you for taking the time to read my introduction. If you have any
+          {`Thank you for taking the time to read my introduction. If you have any
           questions or would like to discuss my experience further, please don't
-          hesitate to reach out.
+          hesitate to reach out.`}
           <Link href="/contacts" className="Button from-left ml-4 px-4 py-1">
             Contact
           </Link>
