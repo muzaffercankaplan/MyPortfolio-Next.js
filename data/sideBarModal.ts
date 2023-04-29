@@ -5,25 +5,25 @@ export const socialLink: sideBarIconModal[] = [
   {
     icon: BsGithub,
     link: "https://github.com/muzaffercankaplan",
-    color: "bg-[#333]",
+    color: "#333",
     text: "Github",
   },
   {
     icon: BsLinkedin,
     link: "https://www.linkedin.com/in/muzafferckaplan/",
-    color: "bg-[#0e76a8]",
+    color: "#0e76a8",
     text: "LinkedIn",
   },
   {
     icon: BsInstagram,
     link: "https://github.com/muzaffercankaplan",
-    color: "bg-[#cd486b]",
+    color: "#cd486b",
     text: "Instagram",
   },
   {
     icon: BsMedium,
     link: "https://medium.com/@muzafferckaplan",
-    color: "bg-[#292929]",
+    color: "#292929",
     text: "Medium",
   },
 ];
