@@ -1,6 +1,7 @@
 import { AiFillGithub, AiOutlineHtml5 } from "react-icons/ai";
 import { DiCss3Full, DiJavascript, DiReact } from "react-icons/di";
 import {
+  SiAntdesign,
   SiFirebase,
   SiNextdotjs,
   SiSass,
@@ -69,6 +70,12 @@ export const skillsIcon: skillsIconModal[] = [
     percent: 90,
     color: "#F5840F",
     icon: SiFirebase,
+  },
+  {
+    title: "Ant Design",
+    percent: 90,
+    color: "#F63144",
+    icon: SiAntdesign,
   },
 ];
 

@@ -24,8 +24,17 @@ const Projects = () => {
 
   return (
     <>
-      <div key={currentProject?.id} className="relative">
-        <div className="w-screen h-[35vh] md:h-[50vh] relative">
+      <div
+        key={currentProject?.id}
+        className={currentProject?.framework === "React" ? "relative" : ""}
+      >
+        <div
+          className={`relative ${
+            currentProject?.framework === "React"
+              ? "w-screen h-[35vh] md:h-[50vh]"
+              : "h-screen w-[50vh]"
+          } `}
+        >
           <div className="group tracking-[.5rem] text-[#66FCF1] uppercase cursor-pointer border border-[#45A29E] absolute z-50 left-10 top-10">
             <Link
               href="/projects"
@@ -42,12 +51,15 @@ const Projects = () => {
               />
             </Link>
           </div>
-          <div className="absolute top-0 left-0 w-full h-[35vh] md:h-[50vh] bg-primary opacity-50 z-10" />
+          {currentProject?.framework === "React" && (
+            <div className="absolute top-0 left-0 w-full h-[35vh] md:h-[50vh] bg-primary opacity-50 z-10" />
+          )}
           <Image
-            className="absolute z-1"
+            className="absolute z-1 items-end"
             layout="fill"
             src={currentProject?.image || ""}
             alt="/"
+            loading="lazy"
           />
           <div className="absolute top-[70%] mx-20 max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
             <h2 className="py-2 text-left text-2xl">

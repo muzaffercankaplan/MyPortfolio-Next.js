@@ -2,10 +2,13 @@
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { FC } from "react";
 import { navbarLinkModal } from "../../typings";
-
-const Header = () => {
+type Props = {
+  isOpen: boolean;
+  setIsOpen: any;
+};
+const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
   const itemVariants: Variants = {
     open: {
       opacity: 1,
@@ -14,8 +17,6 @@ const Header = () => {
     },
     closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
   };
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const pathName = usePathname();
   const navbarLink: navbarLinkModal[] = [
