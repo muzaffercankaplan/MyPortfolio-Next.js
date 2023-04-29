@@ -1,24 +1,17 @@
-interface socialLinkModal {
-  icon: any;
-  link: string;
-  color: string;
-  text: string;
-}
+import Link from "next/link";
+import { sideBarIconModal } from "../typings";
 
 type Props = {
-  item: socialLinkModal;
+  item: sideBarIconModal;
 };
 
-// 333
-// 0e76a8
-// cd486b
 const SocialLinks = ({ item }: Props) => {
   return (
     <div className={`SocialLinksContainer rounded-r-md ${item.color}`}>
-      <a target="_blank" className="flex py-1" href={item.link}>
+      <Link target="_blank" className="flex py-1" href={item.link}>
         <p className="SocialLinksText animate-pulse">{item.text}</p>
-        <div className="SocialLinksLogo">{item.icon}</div>
-      </a>
+        <div className="SocialLinksLogo">{<item.icon size={32} />}</div>
+      </Link>
     </div>
   );
 };
