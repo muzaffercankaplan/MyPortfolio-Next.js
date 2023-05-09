@@ -1,4 +1,4 @@
-import { BsGithub, BsInstagram, BsLinkedin, BsMedium } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsMedium } from "react-icons/bs";
 import { sideBarIconModal } from "../typings";
 
 export const socialLink: sideBarIconModal[] = [
@@ -14,12 +14,12 @@ export const socialLink: sideBarIconModal[] = [
     color: "#0e76a8",
     text: "LinkedIn",
   },
-  {
-    icon: BsInstagram,
-    link: "https://github.com/muzaffercankaplan",
-    color: "#cd486b",
-    text: "Instagram",
-  },
+  // {
+  //   icon: BsInstagram,
+  //   link: "https://github.com/muzaffercankaplan",
+  //   color: "#cd486b",
+  //   text: "Instagram",
+  // },
   {
     icon: BsMedium,
     link: "https://medium.com/@muzafferckaplan",
