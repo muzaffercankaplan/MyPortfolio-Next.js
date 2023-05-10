@@ -41,10 +41,10 @@ const Page = () => {
       >
         <button className="group text-base text-text uppercase cursor-pointer border-[1px] border-border leading-3 mb-4">
           <a
-            href="MuzafferCanKaplan-resume.pdf"
+            href="MuzafferKaplan.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="MuzafferKaplanResume.pdf"
+            download="MuzafferKaplanResume"
             className="flex items-center px-4 py-1"
           >
             Resume{" "}
