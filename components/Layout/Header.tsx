@@ -73,7 +73,9 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
             }`}
             key={item.title}
           >
-            <Link href={item.href}>{item.title}</Link>
+            <Link as={item.href} href={item.href}>
+              {item.title}
+            </Link>
           </div>
         ))}
       </motion.div>
