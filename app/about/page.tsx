@@ -1,12 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import profilePic from "../../public/Avatar.jpg";
 
 const About = () => {
   return (
-    <header className="md:-mt-10 ml-24 lg:ml-0">
+    <header className="md:-mt-10 mx-5">
       <p className="block md:hidden text-2xl mb-4">About</p>
       <motion.div
         className="box"
@@ -49,9 +48,9 @@ const About = () => {
           {`Thank you for taking the time to read my introduction. If you have any
           questions or would like to discuss my experience further, please don't
           hesitate to reach out.`}
-          <Link href="/contacts" className="Button from-left ml-4 px-4 py-1">
+          {/* <Link href="/contacts" className="">
             Contact
-          </Link>
+          </Link> */}
         </p>
       </div>
     </header>

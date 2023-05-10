@@ -20,7 +20,11 @@ export default function RootLayout({
       <head />
       <body>
         {!pageControl && <Header isOpen={isOpen} setIsOpen={setIsOpen} />}
-        {!pageControl && <SideBar />}
+        {!pageControl && (
+          <div className="hidden lg:flex">
+            <SideBar />
+          </div>
+        )}
         <div
           onClick={() => setIsOpen(false)}
           className={`${

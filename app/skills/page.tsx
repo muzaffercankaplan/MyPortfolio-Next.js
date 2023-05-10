@@ -17,7 +17,7 @@ const Skills = () => {
       className="text-center flex flex-col"
     >
       <p className="block md:hidden text-2xl mb-4">Skills</p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-2 md:gap-y-10 gap-x-20 self-center lg:grid-cols-5 md:ml-36 lg:ml-20 flex-wrap">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-2 md:gap-y-10 gap-x-20 self-center lg:grid-cols-5 mx-5 lg:ml-20 flex-wrap">
         {skillsIcon.map((item: skillsIconModal) => (
           <div
             key={item.title}
