@@ -23,23 +23,23 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
   const navbarLink: navbarLinkModal[] = [
     {
       title: "Home",
-      href: "",
+      href: "/",
     },
     {
       title: "About",
-      href: "about",
+      href: "/about",
     },
     {
       title: "Projects",
-      href: "projects",
+      href: "/projects",
     },
     {
       title: "Skills",
-      href: "skills",
+      href: "/skills",
     },
     {
       title: "Contact",
-      href: "contacts",
+      href: "/contacts",
     },
   ];
 
@@ -65,18 +65,20 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
         }}
         className="hidden md:flex gap-6"
       >
-        {navbarLink.map((item) => (
-          <div
-            className={`relative text-lg ${
-              pathName === `/${item.href}`
-                ? "text-primary"
-                : "NavbarLinkText text-thirty"
-            }`}
-            key={item.title}
-          >
-            <Link href={`/${item.href}`}>{item.title}</Link>
-          </div>
-        ))}
+        {navbarLink.map((item) => {
+          const isActive = pathName === item.href;
+          return (
+            <Link
+              className={`relative text-lg ${
+                isActive ? "text-primary" : "NavbarLinkText text-thirty"
+              }`}
+              href={item.href}
+              key={item.title}
+            >
+              {item.title}
+            </Link>
+          );
+        })}
       </motion.div>
       <motion.div
         initial={{ x: 500, opacity: 0, scale: 0 }}
@@ -135,20 +137,20 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
             }}
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
           >
-            {navbarLink.map((item) => (
-              <div
-                className={`relative text-lg ${
-                  pathName === `/${item.href}`
-                    ? "text-primary"
-                    : "NavbarLinkText text-thirty"
-                }`}
-                key={item.title}
-              >
-                <Link href={item.href}>
+            {navbarLink.map((item) => {
+              const isActive = pathName === item.href;
+              return (
+                <Link
+                  className={`relative text-lg ${
+                    isActive ? "text-primary" : "NavbarLinkText text-thirty"
+                  }`}
+                  key={item.title}
+                  href={item.href}
+                >
                   <motion.li variants={itemVariants}>{item.title} </motion.li>
                 </Link>
-              </div>
-            ))}
+              );
+            })}
           </motion.ul>
         </motion.nav>
       </motion.div>
