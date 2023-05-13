@@ -25,6 +25,7 @@ const Page = () => {
           alt="profile"
           width="200"
           height="200"
+          priority={true}
         />
       </motion.div>
       <motion.div
@@ -55,7 +56,7 @@ const Page = () => {
           </a>
         </button>
       </motion.div>
-      <motion.p
+      <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -63,7 +64,7 @@ const Page = () => {
         }}
       >
         Hello! I am
-        <span className="text-text">
+        <div className="text-text">
           <Typewriter
             options={{
               strings: [
@@ -78,8 +79,8 @@ const Page = () => {
               deleteSpeed: 100,
             }}
           />
-        </span>
-      </motion.p>
+        </div>
+      </motion.div>
     </div>
   );
 };

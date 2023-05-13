@@ -3,7 +3,7 @@ import { socialLink } from "../../data/sideBarModal";
 
 const Footer = () => {
   return (
-    <div className="flex lg:hidden gap-3 items-center justify-center py-1 FooterShadow">
+    <div className="flex lg:hidden gap-3 items-center justify-center py-1 mt-3 FooterShadow">
       {socialLink.map((item) => (
         <div className="p-3 " key={item.text}>
           <div className="rounded-md hover:text-text">

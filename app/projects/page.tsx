@@ -16,9 +16,11 @@ const Page = () => {
             <p className="z-10 absolute top-2">{item.title}</p>
             <Image
               className="absolute z-1 rounded-lg group-hover:scale-125 duration-300"
-              layout="fill"
-              src={item.image}
-              alt="/"
+              fill
+              priority={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              src={`/${item.image}`}
+              alt={item.title}
             />
             <p className="group-hover:hidden hidden">{item.title}</p>
             <div className="hidden group-hover:block w-full h-full bg-primary absolute opacity-80 rounded-lg border-primary" />

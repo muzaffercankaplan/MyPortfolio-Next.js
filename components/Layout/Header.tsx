@@ -19,26 +19,27 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
   };
 
   const pathName = usePathname();
+
   const navbarLink: navbarLinkModal[] = [
     {
       title: "Home",
-      href: "/",
+      href: "",
     },
     {
       title: "About",
-      href: "/about",
+      href: "about",
     },
     {
       title: "Projects",
-      href: "/projects",
+      href: "projects",
     },
     {
       title: "Skills",
-      href: "/skills",
+      href: "skills",
     },
     {
       title: "Contact",
-      href: "/contacts",
+      href: "contacts",
     },
   ];
 
@@ -67,13 +68,13 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
         {navbarLink.map((item) => (
           <div
             className={`relative text-lg ${
-              pathName === item.href
+              pathName === `/${item.href}`
                 ? "text-primary"
                 : "NavbarLinkText text-thirty"
             }`}
             key={item.title}
           >
-            <Link href={item.href}>{item.title}</Link>
+            <Link href={`/${item.href}`}>{item.title}</Link>
           </div>
         ))}
       </motion.div>
@@ -137,7 +138,7 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
             {navbarLink.map((item) => (
               <div
                 className={`relative text-lg ${
-                  pathName === item.href
+                  pathName === `/${item.href}`
                     ? "text-primary"
                     : "NavbarLinkText text-thirty"
                 }`}

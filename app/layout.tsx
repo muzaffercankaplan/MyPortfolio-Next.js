@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   const pathName = usePathname();
   const pageControl = pathName?.split("/")[2];
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <html lang="en">
