@@ -1,7 +1,6 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FC } from "react";
 import { navbarLinkModal } from "../../typings";
 type Props = {
@@ -9,6 +8,7 @@ type Props = {
   setIsOpen: any;
 };
 const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
+  const router = useRouter();
   const itemVariants: Variants = {
     open: {
       opacity: 1,
@@ -23,7 +23,7 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
   const navbarLink: navbarLinkModal[] = [
     {
       title: "Home",
-      href: "/",
+      href: "",
       active: "/",
     },
     {
@@ -73,15 +73,16 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
         {navbarLink.map((item) => {
           const isActive = pathName === item.active;
           return (
-            <Link
-              className={`relative text-lg ${
+            <div
+              className={`relative text-lg cursor-pointer ${
                 isActive ? "text-primary" : "NavbarLinkText text-thirty"
               }`}
-              href={item.href}
+              // href={item.href}
+              onClick={() => router.push(item.href)}
               key={item.title}
             >
               {item.title}
-            </Link>
+            </div>
           );
         })}
       </motion.div>
@@ -145,15 +146,16 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
             {navbarLink.map((item) => {
               const isActive = pathName === item.active;
               return (
-                <Link
+                <div
                   className={`relative text-lg ${
                     isActive ? "text-primary" : "NavbarLinkText text-thirty"
                   }`}
                   key={item.title}
-                  href={item.href}
+                  // href={item.href}
+                  onClick={() => router.push(item.href)}
                 >
                   <motion.li variants={itemVariants}>{item.title} </motion.li>
-                </Link>
+                </div>
               );
             })}
           </motion.ul>
