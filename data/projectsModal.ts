@@ -9,7 +9,7 @@ export const projectsModal: projectModal[] = [
     demoUrl: "https://weather-app-515.pages.dev/",
     githubUrl: "https://github.com/muzaffercankaplan/wheather-app-React",
     dependicies: ["react", "axios", "luxon", "openweathermap api"],
-    image: "weatherapp.png",
+    image: "/weatherapp.png",
     framework: "React",
   },
   {
@@ -20,7 +20,7 @@ export const projectsModal: projectModal[] = [
     demoUrl: "https://todo-exa.pages.dev/",
     githubUrl: "https://github.com/muzaffercankaplan/React-todo",
     dependicies: ["React"],
-    image: "ToDoScreen.png",
+    image: "/ToDoScreen.png",
     framework: "React",
   },
   {
@@ -31,7 +31,7 @@ export const projectsModal: projectModal[] = [
     demoUrl: "https://fitness-app-cxq.pages.dev/",
     githubUrl: "https://github.com/muzaffercankaplan/Fitness-App",
     dependicies: ["React", "React-icons", "React-router-dom", "ExerciseDB API"],
-    image: "Home.png",
+    image: "/Home.png",
     framework: "React",
   },
   {
@@ -47,7 +47,7 @@ export const projectsModal: projectModal[] = [
       "react-scripts",
       "react-scroll",
     ],
-    image: "Myportfolio.png",
+    image: "/Myportfolio.png",
     framework: "React",
   },
   {
@@ -64,7 +64,7 @@ export const projectsModal: projectModal[] = [
       "react-navigation",
       "react-navigation/native",
     ],
-    image: "UserLogin.png",
+    image: "/UserLogin.png",
     framework: "React Native",
   },
   {
@@ -75,7 +75,7 @@ export const projectsModal: projectModal[] = [
     demoUrl: "",
     githubUrl: "https://github.com/muzaffercankaplan/ToDoList",
     dependicies: ["React Native", "expo"],
-    image: "NativeToDoList.png",
+    image: "/NativeToDoList.png",
     framework: "React Native",
   },
 ];

@@ -24,22 +24,27 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
     {
       title: "Home",
       href: "/",
+      active: "/",
     },
     {
       title: "About",
-      href: "/about",
+      href: "about",
+      active: "/about",
     },
     {
       title: "Projects",
-      href: "/projects",
+      href: "projects",
+      active: "/projects",
     },
     {
       title: "Skills",
-      href: "/skills",
+      href: "skills",
+      active: "/skills",
     },
     {
       title: "Contact",
-      href: "/contacts",
+      href: "contacts",
+      active: "/contacts",
     },
   ];
 
@@ -66,7 +71,7 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
         className="hidden md:flex gap-6"
       >
         {navbarLink.map((item) => {
-          const isActive = pathName === item.href;
+          const isActive = pathName === item.active;
           return (
             <Link
               className={`relative text-lg ${
@@ -138,7 +143,7 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
           >
             {navbarLink.map((item) => {
-              const isActive = pathName === item.href;
+              const isActive = pathName === item.active;
               return (
                 <Link
                   className={`relative text-lg ${

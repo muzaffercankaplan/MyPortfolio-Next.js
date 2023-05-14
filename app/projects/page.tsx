@@ -19,7 +19,7 @@ const Page = () => {
               fill
               priority={true}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              src={`/${item.image}`}
+              src={item.image}
               alt={item.title}
             />
             <p className="group-hover:hidden hidden">{item.title}</p>

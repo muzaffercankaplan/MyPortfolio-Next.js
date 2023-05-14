@@ -19,11 +19,13 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+        {!pageControl && <Header isOpen={isOpen} setIsOpen={setIsOpen} />}
 
-        <div className="hidden lg:flex">
-          <SideBar />
-        </div>
+        {!pageControl && (
+          <div className="hidden lg:flex">
+            <SideBar />
+          </div>
+        )}
 
         <div
           onClick={() => setIsOpen(false)}
@@ -32,7 +34,7 @@ export default function RootLayout({
           }   mx-auto text-center flex flex-col justify-between`}
         >
           <main>{children}</main>
-          <Footer />
+          {!pageControl && <Footer />}
         </div>
       </body>
     </html>

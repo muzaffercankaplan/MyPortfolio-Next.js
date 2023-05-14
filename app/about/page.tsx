@@ -19,6 +19,7 @@ const About = () => {
           className="AboutImage w-48 h-48 mb-4 mx-auto float-none rounded-xl md:w-96 md:h-96 md:float-left md:rounded-full md:mr-[70px]"
           src={profilePic}
           alt="profile"
+          priority={true}
         />
       </motion.div>
       <div className="text-start tracking-wider ml-4 sm:mr-4 text-sm leading-6 md:text-lg md:leading-8 ">

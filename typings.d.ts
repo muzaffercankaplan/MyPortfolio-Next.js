@@ -8,6 +8,7 @@ export interface skillsIconModal {
 export interface navbarLinkModal {
   title: string;
   href: string;
+  active: string;
 }
 
 export interface projectModal {
