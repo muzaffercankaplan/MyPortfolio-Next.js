@@ -1,6 +1,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FC } from "react";
 import { navbarLinkModal } from "../../typings";
 type Props = {
@@ -8,7 +9,6 @@ type Props = {
   setIsOpen: any;
 };
 const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
-  const router = useRouter();
   const itemVariants: Variants = {
     open: {
       opacity: 1,
@@ -73,16 +73,16 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
         {navbarLink.map((item) => {
           const isActive = pathName === item.active;
           return (
-            <div
-              className={`relative text-lg cursor-pointer ${
+            <Link
+              className={`relative text-lg ${
                 isActive ? "text-primary" : "NavbarLinkText text-thirty"
               }`}
               // href={item.href}
-              onClick={() => router.push(item.href)}
               key={item.title}
+              href={item.active}
             >
               {item.title}
-            </div>
+            </Link>
           );
         })}
       </motion.div>
@@ -146,16 +146,15 @@ const Header: FC<Props> = ({ isOpen, setIsOpen }) => {
             {navbarLink.map((item) => {
               const isActive = pathName === item.active;
               return (
-                <div
+                <Link
                   className={`relative text-lg ${
                     isActive ? "text-primary" : "NavbarLinkText text-thirty"
                   }`}
                   key={item.title}
-                  // href={item.href}
-                  onClick={() => router.push(item.href)}
+                  href={item.active}
                 >
                   <motion.li variants={itemVariants}>{item.title} </motion.li>
-                </div>
+                </Link>
               );
             })}
           </motion.ul>
