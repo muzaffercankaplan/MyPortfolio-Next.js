@@ -11,7 +11,7 @@ import { projectModal } from "../../../typings";
 const Projects = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const page = searchParams.get("id");
+  const page = searchParams?.get("id");
   const currentProject = useMemo<projectModal | undefined>(() => {
     return page
       ? projectsModal.find((item) => item.id === Number(page))
