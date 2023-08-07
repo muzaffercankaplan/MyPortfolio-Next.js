@@ -18,6 +18,7 @@ const Page = () => {
             <Image
               className="absolute top-0 z-1 rounded-lg group-hover:scale-105 duration-300"
               fill
+              loading="lazy"
               priority={true}
               src={item.image}
               alt={item.title}
