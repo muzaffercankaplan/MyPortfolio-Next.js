@@ -1,25 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { socialLink } from "../../data/sideBarModal";
 
 const Contacts = () => {
-  const [formValue, setFormValue] = useState<{
-    name: string;
-    email: string;
-    message: string;
-  }>({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-  };
+  // const [formValue, setFormValue] = useState<{
+  //   name: string;
+  //   email: string;
+  //   message: string;
+  // }>({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
+  // const handleSubmit = (e: any) => {
+  //   e.preventDefault();
+  // };
   return (
     <div>
       <div className="flex flex-col justify-center h-full">
         <h2 className="block md:hidden text-2xl mb-4">Contact</h2>
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div>
           <div className="col-span-3 gap-5lg:py-10 flex flex-col justify-center text-center lg:col-span-2 w-full h-full">
             <div className="text-4xl mb-4 items-center">
               <h2>If Not Now, When?</h2>
@@ -37,7 +38,23 @@ const Contacts = () => {
               </p>
             </div>
           </div>
-          <div className="col-span-3 lg:py-10 justify-center text-left w-full h-full">
+          <div className="flex gap-3 items-center justify-center py-1 mt-10">
+            {socialLink.map((item) => (
+              <div className="p-3 " key={item.text}>
+                <div className="rounded-md hover:text-text">
+                  <Link
+                    target="_blank"
+                    className="flex hover:scale-125 duration-300"
+                    href={item.link}
+                  >
+                    {/* <p className="SocialLinksText animate-pulse">{item.text}</p> */}
+                    <div className="">{<item.icon size={32} />}</div>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* <div className="col-span-3 lg:py-10 justify-center text-left w-full h-full">
             <form
               // onSubmit={handleSubmit}
               action="https://getform.io/f/9b2ac89d-2e50-475c-9a93-85a1ba1283be"
@@ -98,7 +115,7 @@ const Contacts = () => {
                 send message
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

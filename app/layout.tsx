@@ -12,17 +12,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathName = usePathname();
-  const pageControl = pathName?.split("/")[2];
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <html lang="en">
       <head />
       <body>
-        {!pageControl && <Header isOpen={isOpen} setIsOpen={setIsOpen} />}
+        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
 
-        {!pageControl && (
-          <div className="hidden lg:flex">
+        {pathName !== "/contacts" && (
+          <div className="hidden lg:flex fixed z-20 top-1/3">
             <SideBar />
           </div>
         )}
@@ -30,11 +29,13 @@ export default function RootLayout({
         <div
           onClick={() => setIsOpen(false)}
           className={`${
-            pageControl ? "h-screen" : "max-w-[1200px] pt-4 md:pt-40 h-[90vh]"
+            pathName === "/projects"
+              ? "h-screen"
+              : "max-w-[1200px] pt-4 md:pt-40 h-[90vh]"
           }   mx-auto text-center flex flex-col justify-between`}
         >
           <main>{children}</main>
-          {!pageControl && <Footer />}
+          {pathName !== "/contacts" && <Footer />}
         </div>
       </body>
     </html>
